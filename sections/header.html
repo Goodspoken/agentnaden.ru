@@ -1,0 +1,40 @@
+<!-- Плавающая форма -->
+<div class="floating-form" id="floating-form">
+    <div class="container">
+        <div class="floating-form-container">
+            <!-- Honeypot поле для защиты от ботов -->
+            <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+            
+            <input type="text" placeholder="Ваше имя" id="floating-name" required>
+            <input type="tel" placeholder="Ваш телефон" id="floating-phone" required>
+            
+            <!-- reCAPTCHA -->
+            <div class="g-recaptcha" data-sitekey="6LdAdJ0rAAAAAGX8EgZIT5A295K_10U5apwWKPN"></div>
+            
+            <button class="btn" onclick="submitFloatingForm()">Отправить заявку</button>
+        </div>
+    </div>
+</div>
+
+<!-- Навигация -->
+<nav class="navbar" id="navbar">
+    <div class="container nav-container">
+        <a href="#" class="nav-logo">
+            <div class="nav-logo-main">АГЕНТ НА СДЕЛКУ</div>
+            <div class="nav-logo-sub">24/7</div>
+        </a>
+        
+        <div class="nav-phone">
+            <a href="tel:+79062563488">+7 (906) 256-34-88</a>
+        </div>
+
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="#services">Услуги</a></li>
+            <li><a href="#reviews">Отзывы</a></li>
+            <li><a href="#faq">Вопросы</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+        </ul>
+        
+        <button class="nav-toggle" id="nav-toggle">☰</button>
+    </div>
+</nav> 

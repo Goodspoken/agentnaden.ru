@@ -1,0 +1,169 @@
+<!-- Все услуги -->
+<section id="full-services" class="section-light">
+    <div class="container">
+        <h2>Все услуги агента по недвижимости в СПб</h2>
+        <p class="text-center text-xl mb-8">Полный спектр услуг для решения любых вопросов с недвижимостью</p>
+        
+        <!-- Сетка услуг -->
+        <div class="services-full-grid" id="services-grid">
+            
+            <!-- Первые 3 услуги (всегда видны) -->
+            <div class="service-card">
+                <div class="service-header">
+                    <img src="logos/services-icons/new_icon_0_0.png" alt="Проверка документов" class="service-icon">
+                    <h3>Проверка документов при покупке квартиры</h3>
+                </div>
+                <p><strong>Комплексная проверка всех документов</strong> перед покупкой недвижимости. Выявляем скрытые проблемы и риски.</p>
+                <ul>
+                    <li>Проверка свидетельства о праве собственности</li>
+                    <li>Анализ выписки из ЕГРН</li>
+                    <li>Проверка технического паспорта</li>
+                    <li>Контроль документов продавца</li>
+                </ul>
+                <div class="service-price">от 3 000₽</div>
+                <button class="btn" onclick="openModal('check-service')">Заказать проверку</button>
+            </div>
+
+            <div class="service-card">
+                <div class="service-header">
+                    <img src="logos/services-icons/new_icon_0_1.png" alt="Сопровождение сделки" class="service-icon">
+                    <h3>Сопровождение сделки с недвижимостью</h3>
+                </div>
+                <p><strong>Полное сопровождение</strong> от начала до завершения сделки. Контроль каждого этапа и защита ваших интересов.</p>
+                <ul>
+                    <li>Подготовка к сделке</li>
+                    <li>Сопровождение в банк</li>
+                    <li>Контроль регистрации</li>
+                    <li>Получение документов</li>
+                </ul>
+                <div class="service-price">от 7 000₽</div>
+                <button class="btn" onclick="openModal('deal-service')">Заказать сопровождение</button>
+            </div>
+
+            <div class="service-card">
+                <div class="service-header">
+                    <img src="logos/services-icons/new_icon_0_2.png" alt="Помощь при покупке" class="service-icon">
+                    <h3>Помощь при покупке квартиры</h3>
+                </div>
+                <p><strong>Профессиональная помощь</strong> на всех этапах покупки недвижимости. От выбора до получения ключей.</p>
+                <ul>
+                    <li>Подбор вариантов</li>
+                    <li>Оценка недвижимости</li>
+                    <li>Проверка документов</li>
+                    <li>Сопровождение сделки</li>
+                </ul>
+                <div class="service-price">от 5 000₽</div>
+                <button class="btn" onclick="openModal('buy-service')">Получить помощь</button>
+            </div>
+
+            <!-- Скрытые услуги -->
+            <div class="service-card hidden-service" id="hidden-service-1">
+                <div class="service-header">
+                    <img src="logos/services-icons/new_icon_1_0.png" alt="Защита от мошенников" class="service-icon">
+                    <h3>Защита от мошенников недвижимость</h3>
+                </div>
+                <p><strong>Надежная защита</strong> от мошеннических схем при покупке недвижимости. Выявляем подозрительные сделки.</p>
+                <ul>
+                    <li>Проверка продавца</li>
+                    <li>Анализ схем мошенников</li>
+                    <li>Проверка документов</li>
+                    <li>Правовая защита</li>
+                </ul>
+                <div class="service-price">от 3 000₽</div>
+                <button class="btn" onclick="openModal('protection-service')">Защитить сделку</button>
+            </div>
+
+            <div class="service-card hidden-service" id="hidden-service-2">
+                <div class="service-header">
+                    <img src="logos/services-icons/new_icon_1_1.png" alt="Проверка агента" class="service-icon">
+                    <h3>Проверка агента недвижимости</h3>
+                </div>
+                <p><strong>Проверка надежности</strong> агента по недвижимости. Убедимся, что вы работаете с профессионалом.</p>
+                <ul>
+                    <li>Проверка лицензии</li>
+                    <li>Анализ репутации</li>
+                    <li>Проверка отзывов</li>
+                    <li>Контроль договора</li>
+                </ul>
+                <div class="service-price">от 2 000₽</div>
+                <button class="btn" onclick="openModal('agent-check')">Проверить агента</button>
+            </div>
+
+            <div class="service-card hidden-service" id="hidden-service-3">
+                <div class="service-header">
+                    <img src="logos/services-icons/new_icon_1_2.png" alt="Спокойная покупка" class="service-icon">
+                    <h3>Спокойная покупка квартиры</h3>
+                </div>
+                <p><strong>Максимальная защита</strong> и спокойствие при покупке недвижимости. Все риски под контролем.</p>
+                <ul>
+                    <li>Полная проверка недвижимости</li>
+                    <li>Сопровождение сделки</li>
+                    <li>Защита от мошенников</li>
+                    <li>Гарантия безопасности</li>
+                </ul>
+                <div class="service-price">от 7 000₽</div>
+                <button class="btn" onclick="openModal('safe-buy')">Купить спокойно</button>
+            </div>
+
+            <div class="service-card hidden-service" id="hidden-service-4">
+                <div class="service-header">
+                    <img src="logos/services-icons/new_icon_2_0.png" alt="Юридическое сопровождение" class="service-icon">
+                    <h3>Юридическое сопровождение сделки</h3>
+                </div>
+                <p><strong>Юрист по недвижимости</strong> на сделку обеспечивает правовую защиту. Регистрация в Росреестре под контролем.</p>
+                <ul>
+                    <li>Проверка документов</li>
+                    <li>Составление договоров</li>
+                    <li>Регистрация в Росреестре</li>
+                    <li>Правовая защита</li>
+                </ul>
+                <div class="service-price">от 5 000₽</div>
+                <button class="btn" onclick="openModal('legal-service')">Получить защиту</button>
+            </div>
+
+            <div class="service-card hidden-service" id="hidden-service-5">
+                <div class="service-header">
+                    <img src="logos/services-icons/new_icon_2_1.png" alt="Проверка рисков" class="service-icon">
+                    <h3>Проверка недвижимости на риски</h3>
+                </div>
+                <p><strong>Полная проверка квартиры</strong> перед покупкой. Выявляем все скрытые проблемы и риски.</p>
+                <ul>
+                    <li>Проверка истории квартиры</li>
+                    <li>Анализ всех собственников</li>
+                    <li>Проверка обременений</li>
+                    <li>Детальный отчет</li>
+                </ul>
+                <div class="service-price">от 4 000₽</div>
+                <button class="btn" onclick="openModal('risk-check')">Проверить риски</button>
+            </div>
+
+            <div class="service-card hidden-service" id="hidden-service-6">
+                <div class="service-header">
+                    <img src="logos/services-icons/new_icon_2_2.png" alt="Ипотечная сделка" class="service-icon">
+                    <h3>Сопровождение ипотечной сделки</h3>
+                </div>
+                <p><strong>Помощь с ипотекой</strong> от подачи заявки до получения ключей. Работаем со всеми банками СПб.</p>
+                <ul>
+                    <li>Подбор банка и программы</li>
+                    <li>Сбор документов</li>
+                    <li>Сопровождение в банк</li>
+                    <li>Контроль процесса</li>
+                </ul>
+                <div class="service-price">от 6 000₽</div>
+                <button class="btn" onclick="openModal('mortgage-service')">Получить помощь</button>
+            </div>
+        </div>
+
+        <!-- Кнопка "Показать ещё" -->
+        <div class="show-more-container">
+            <button class="btn btn-secondary" id="show-more-btn">
+                <span id="show-more-text">Показать ещё услуги</span>
+            </button>
+        </div>
+
+        <!-- Кнопка заказа консультации -->
+        <div class="text-center" style="margin-top: 40px;">
+            <button class="btn btn-large" onclick="openModal('consultation')">Получить бесплатную консультацию</button>
+        </div>
+    </div>
+</section> 
