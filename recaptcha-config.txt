@@ -1,0 +1,111 @@
+# 🔐 КОНФИГУРАЦИЯ reCAPTCHA
+## Агент на сделку СПб - Серверная настройка
+
+### 📋 КЛЮЧИ reCAPTCHA:
+
+#### 🌐 Site Key (публичный - для клиентской части):
+6LdAdJ0rAAAAAGX8EgZIT5A295K_10U5apwWKPN
+
+#### 🔒 Secret Key (секретный - для серверной части):
+6LdAdJ0rAAAAALUNUES0de4Ifymn78YdZ6V7nLOa
+
+---
+
+### 📝 ИНСТРУКЦИИ ДЛЯ СЕРВЕРНОЙ ЧАСТИ:
+
+#### 1. Проверка reCAPTCHA на сервере:
+```php
+// PHP пример
+$secret_key = "6LdAdJ0rAAAAALUNUES0de4Ifymn78YdZ6V7nLOa";
+$recaptcha_response = $_POST['g-recaptcha-response'];
+
+$verify_url = "https://www.google.com/recaptcha/api/siteverify";
+$data = [
+    'secret' => $secret_key,
+    'response' => $recaptcha_response,
+    'remoteip' => $_SERVER['REMOTE_ADDR']
+];
+
+$options = [
+    'http' => [
+        'header' => "Content-type: application/x-www-form-urlencoded\r\n",
+        'method' => 'POST',
+        'content' => http_build_query($data)
+    ]
+];
+
+$context = stream_context_create($options);
+$result = file_get_contents($verify_url, false, $context);
+$response = json_decode($result);
+
+if ($response->success) {
+    // reCAPTCHA пройдена успешно
+    // Обрабатываем форму
+} else {
+    // reCAPTCHA не пройдена
+    // Показываем ошибку
+}
+```
+
+#### 2. Node.js пример:
+```javascript
+const axios = require('axios');
+
+async function verifyRecaptcha(recaptchaResponse, remoteIp) {
+    const secretKey = "6LdAdJ0rAAAAALUNUES0de4Ifymn78YdZ6V7nLOa";
+    
+    try {
+        const response = await axios.post('https://www.google.com/recaptcha/api/siteverify', {
+            secret: secretKey,
+            response: recaptchaResponse,
+            remoteip: remoteIp
+        });
+        
+        return response.data.success;
+    } catch (error) {
+        console.error('reCAPTCHA verification error:', error);
+        return false;
+    }
+}
+```
+
+#### 3. Python пример:
+```python
+import requests
+
+def verify_recaptcha(recaptcha_response, remote_ip):
+    secret_key = "6LdAdJ0rAAAAALUNUES0de4Ifymn78YdZ6V7nLOa"
+    
+    data = {
+        'secret': secret_key,
+        'response': recaptcha_response,
+        'remoteip': remote_ip
+    }
+    
+    response = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)
+    result = response.json()
+    
+    return result.get('success', False)
+```
+
+---
+
+### ⚠️ ВАЖНЫЕ ЗАМЕЧАНИЯ:
+
+1. **Site Key** используется в HTML коде (клиентская часть)
+2. **Secret Key** используется только на сервере (никогда не показывайте в коде клиента)
+3. **Проверяйте reCAPTCHA** на сервере перед обработкой формы
+4. **Логируйте попытки** обхода reCAPTCHA для безопасности
+
+---
+
+### 🔗 ПОЛЕЗНЫЕ ССЫЛКИ:
+
+- **Документация reCAPTCHA:** https://developers.google.com/recaptcha/docs/display
+- **Проверка на сервере:** https://developers.google.com/recaptcha/docs/verify
+- **Панель управления:** https://www.google.com/recaptcha/admin
+
+---
+
+**✅ Ключи интегрированы в код!**
+**🔄 Теперь нужно настроить серверную проверку!**
